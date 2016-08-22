@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rollup -c config/rollup.js",
+    "server": "ws --spa index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrea Restello",
@@ -12,13 +14,15 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
-    "redux": "^3.5.2",
+    "react-router": "^2.6.1",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2"
   },
   "devDependencies": {
     "rollup": "^0.34.10",
+    "rollup-plugin-commonjs": "^3.3.1",
     "rollup-plugin-replace": "^1.1.1",
     "rollup-plugin-typescript": "^0.8.1",
-    "rollup-plugin-uglify": "^1.0.1",
-    "rollup-plugin-commonjs": "^3.3.1"
+    "rollup-plugin-uglify": "^1.0.1"
   }
 }

@@ -1,14 +1,17 @@
 import * as React from "React";
-import * as ReactDOM from "ReactDOM";
+import {render} from 'ReactDOM';
 import configureStore from './store/configureStore';
 import { Provider } from 'ReactRedux';
-import App from "./components/app";
+import { Router, browserHistory } from 'ReactRouter';
+import { syncHistoryWithStore } from 'ReactRouterRedux';
+import {Routes} from './routes';
 
 const store = configureStore({counter:0});
+const history = syncHistoryWithStore(browserHistory, store);
 
-ReactDOM.render(
+render(
       <Provider store={store}>
-        <App />
+        <Router history={history} routes={Routes} />
       </Provider>,
     document.getElementById("container")
 );
